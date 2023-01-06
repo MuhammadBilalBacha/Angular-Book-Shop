@@ -1,0 +1,16 @@
+.login {
+  /* background-color: purple; */
+
+  /* height: 50vh; */
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.myform {
+  background-color: rgb(83, 52, 83);
+  padding: 5rem;
+  border-radius: 10px;
+  color: white;
+  width: 40%;
+}

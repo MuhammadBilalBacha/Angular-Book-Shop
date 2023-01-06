@@ -1,0 +1,16 @@
+<div class="shaddow-lg">
+  <img [src]="check.src" class="card-img-top" alt="..." />
+  <div class="">
+    <h5 class="">{{ check.name | uppercase }} by</h5>
+    <p class="">{{ check.author }}</p>
+    <a *ngIf="!isShowing" (click)="clickHandler()" class="btn btn-success"
+      >Add to cart</a
+    >
+    <a *ngIf="isShowing" (click)="deleteHandler()" class="btn btn-warning"
+      >Remove from Cart</a
+    >
+  </div>
+</div>
+
+<!-- <p>{{ check }}</p> -->
+<!-- <div class="btn btn-danger" (click)="clickHandler()">my object</div> -->

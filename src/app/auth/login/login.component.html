@@ -1,0 +1,53 @@
+<div class="login">
+  <div class="myform">
+    <form (ngSubmit)="loginHandler()" #myForm="ngForm">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          name="email"
+          [(ngModel)]="form.email"
+          #email="ngModel"
+          required
+        />
+        <div
+          *ngIf="email.invalid && email.touched"
+          class="text-danger bg-warning mt-1 rounded-1 ps-2"
+        >
+          Invalid Email
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+          [(ngModel)]="form.password"
+          name="password"
+          #password="ngModel"
+          required
+        />
+        <div
+          *ngIf="password.invalid && password.touched"
+          class="text-danger bg-warning mt-1 rounded-1 px-2"
+        >
+          wrong password
+        </div>
+      </div>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="myForm.form.invalid"
+      >
+        Login
+      </button>
+    </form>
+    <button routerLink="/register" class="w-100 btn btn-success mt-5">
+      Go to Register
+    </button>
+  </div>
+</div>

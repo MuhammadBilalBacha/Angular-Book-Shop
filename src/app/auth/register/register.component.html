@@ -1,0 +1,76 @@
+<div class="login">
+  <div class="myform">
+    <form (ngSubmit)="registerHandler()" #myForm="ngForm">
+      <div class="mb-3">
+        <label for="exampleInputName" class="form-label">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputName"
+          aria-describedby="emailHelp"
+          name="name"
+          [(ngModel)]="form.name"
+          #name="ngModel"
+          required
+        />
+        <div
+          *ngIf="name.invalid && name.touched"
+          class="text-danger bg-warning mt-1 rounded-1 ps-2"
+        >
+          This field is required
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          name="email"
+          [(ngModel)]="form.email"
+          #email="ngModel"
+          required
+        />
+      </div>
+      <div
+        *ngIf="email.invalid && email.touched"
+        class="text-danger bg-warning mt-1 rounded-1 ps-2"
+      >
+        Invalid Email
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+          name="password"
+          [(ngModel)]="form.password"
+          #password="ngModel"
+          required
+        />
+        <div
+          *ngIf="password.invalid && password.touched"
+          class="text-danger bg-warning mt-1 rounded-1 px-2"
+        >
+          give strong password
+        </div>
+      </div>
+      <div class="text-danger bg-warning mb-2 rounded-1 px-2">
+        {{ nameError }}
+      </div>
+      <button
+        type="submit"
+        class="btn btn-success"
+        [disabled]="myForm.form.invalid"
+      >
+        Register
+      </button>
+    </form>
+    <button routerLink="/login" class="w-100 btn btn-danger mt-5">
+      Go to Login
+    </button>
+  </div>
+</div>

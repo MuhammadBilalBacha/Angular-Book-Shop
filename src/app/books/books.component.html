@@ -1,0 +1,26 @@
+<!-- <h1>Programmer books list!</h1> -->
+<!-- <button (click)="handleClick()">{{ toggleButton }}</button> -->
+<br />
+<br />
+<!-- <input type="text" (ngModel)="inputValue" /> -->
+<!-- <p>{{ inputValue }}</p> -->
+<div class="container">
+  <div class="row mx-2 my-3">
+    <div *ngFor="let singleBook of Books; let x = index" class="my-3 col-md-4">
+      <app-book
+        (bookEmmiter)="clickHandler($event)"
+        [check]="singleBook"
+      ></app-book>
+
+      <!-- <div class="mx-2 my-3 text-center">
+            <li>
+              <img [src]="book.src" alt="" width="100px" class="me-2" />
+              {{ book.name | uppercase }} by
+              {{ book.author }}
+            </li>
+            <p>{{ book.amount | currency : "INR" }}</p>
+            <div class="btn btn-success">Add to cart</div>
+          </div> -->
+    </div>
+  </div>
+</div>
